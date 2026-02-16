@@ -13,8 +13,9 @@ __date__ = "enero 2025"
 
 import math
 from collections import Counter
+import random
 
-def entrena_arbol(datos, target, clase_default, 
+def entrena_arbol(datos, target, clase_default,
                   max_profundidad=None, acc_nodo=1.0, min_ejemplos=0,
                   variables_seleccionadas=None):
     """
@@ -60,9 +61,15 @@ def entrena_arbol(datos, target, clase_default,
         clases.most_common(1)[0][1] / len(datos) >= acc_nodo):
         
         return NodoN(terminal=True, clase_default=clase_default)
+
+    if isinstance(variables_seleccionadas, int):
+        k = min(variables_seleccionadas, len(atributos))
+        atributos_eval = random.sample(atributos, k)
+    else:
+        atributos_eval = atributos
     
     variable, valor = selecciona_variable_valor(
-        datos, target, atributos
+        datos, target, atributos_eval
     )
     nodo = NodoN(
         terminal=False, 

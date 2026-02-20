@@ -3,8 +3,6 @@ import arboles_numericos as an
 import os
 import random
 
-# Descarga y descomprime los datos
-
 url = "https://archive.ics.uci.edu/static/public/17/breast+cancer+wisconsin+diagnostic.zip"
 archivo = "datos/cancer.zip"
 archivo_datos = "datos/wdbc.data"

@@ -4,7 +4,7 @@ Este archivo contiene funciones que se utilizan en el miniproyecto.
 Como leer archivos de datos y formatearlos para que sean utilizados en los algoritmos.
 """
 
-from urllib3 import request
+from urllib import request
 import urllib.request
 import zipfile
 
